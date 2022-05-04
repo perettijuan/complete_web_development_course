@@ -1,13 +1,6 @@
+/***************************** TAG SELECTORS *****************************/
 body {
   background-color: #F7F5F2;
-}
-
-hr {
-  border-style: none;
-  border-top-style: dotted;
-  border-color: grey;
-  border-width: 5px;
-  width: 5%;
 }
 
 h1 {
@@ -16,4 +9,33 @@ h1 {
 
 h3 {
   color: #051367;
+}
+
+/*
+ * This is a pseudo-class. It allows to modify certain properties when some
+ * action is taken place over the element.
+ * For example: hover is when the mouse is placed on top of the HTML element.
+ */
+a:hover {
+  background-color: #5D8BF4;
+  color: #F7F5F2;
+}
+
+
+/***************************** CLASS SELECTORS *****************************/
+.hr1 {
+  border-style: none;
+  border-top-style: dotted;
+  border-color: grey;
+  border-width: 5px;
+  width: 5%;
+}
+
+
+.hr2 {
+  border-style: none;
+  border-top-style: dotted;
+  border-color: red;
+  border-width: 5px;
+  width: 5%;
 }
