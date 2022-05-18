@@ -1,20 +1,22 @@
 body {
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
-h1 {
+h2 {
+  font-family: 'Montserrat-Bold', sans-serif;
+}
+
+/* Headings */
+.big-heading {
   font-size: 3.5rem;
   font-weight: 900;
   line-height: 1.5;
 }
 
-.container-fluid {
-  padding: 3% 15%;
-}
-
-#title {
-  color: #FFF;
-  background-color: #FF4C64;
+.section-heading {
+  font-size: 3rem;
+  line-height: 1.5
 }
 
 /* Navigation Bar */
@@ -37,18 +39,35 @@ h1 {
   font-size: 1.2rem;
 }
 
-/* Download Buttons */
+/* Title */
+#title {
+  color: #FFF;
+  background-color: #FF4C64;
+  text-align: left;
+}
+
+.container-fluid {
+  padding: 3% 15% 7%;
+}
+
 .download-button {
   margin: 5% 3% 5% 0;
 }
 
-/* Title Image */
 .title-image {
-  width: 60%;
+  width: 20%;
+  position: absolute;
+  right: 25%;
   transform: rotate(25deg);
 }
 
 /* Features */
+#features {
+  background-color: #FFF;
+  padding: 7% 15%;
+  position: relative;
+}
+
 .col-feature {
   padding: 5%;
 }
@@ -59,7 +78,7 @@ h1 {
 }
 
 .feature-icon:hover {
-    color: #FF4C68;
+  color: #FF4C68;
 }
 
 .h3-features {
@@ -69,4 +88,103 @@ h1 {
 
 .p-features {
   color: #8f8f8f;
+}
+
+/* Testimonials */
+#testimonials {
+  background-color: #EF8172;
+  color: #fff;
+}
+
+.carousel-item {
+  padding: 7% 15%;
+}
+
+.testimonial-image {
+  border-radius: 100%;
+  margin: 20px;
+  width: 10%;
+}
+
+.testimonial-text {
+  font-size: 3rem;
+  line-height: 1.5
+}
+
+/* Press */
+#press {
+  background-color: #EF8172;
+  padding-bottom: 3%;
+}
+
+.press-logo {
+  margin: 20px 20px 50px;
+  width: 10%;
+}
+
+/* Pricing */
+#pricing {
+  padding: 100px;
+}
+
+.pricing-col {
+  padding: 3% 2%;
+}
+
+.pricing-text {
+  font-size: 3rem;
+  line-height: 1.5
+}
+
+/* Call to action */
+#cta {
+  background-color: #FF4C68;
+}
+
+.h3-cta {
+  color: #FFF;
+  font-size: 3.0rem;
+  font-weight: 900;
+  line-height: 1.5;
+  padding: 50px 500px 10px;
+}
+
+/* Footer */
+#footer {
+  background-color: #FFF;
+  padding: 2%;
+}
+
+.a-footer {
+  color: black;
+}
+
+.social-icon {
+  margin: 20px 10px;
+}
+
+/*
+  This is a good mechanism to have a responsive web site without the
+  grid system of Bootstrap.
+  Chapter 84: Media Query Breakpoints
+*/
+@media (max-width: 1028px) {
+
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+    width: 45%;
+  }
+
+  .h3-cta {
+    color: #FFF;
+    font-size: 2.0rem;
+    font-weight: 900;
+    line-height: 1.5;
+    padding: 50px;
+  }
 }
