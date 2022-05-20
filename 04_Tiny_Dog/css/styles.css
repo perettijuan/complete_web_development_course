@@ -7,6 +7,16 @@ h2 {
   font-family: 'Montserrat-Bold', sans-serif;
 }
 
+/* Sections */
+.coloured-section {
+  color: #FFF;
+  background-color: #FF4C64;
+}
+
+.white-section {
+  background-color: #FFF;
+}
+
 /* Headings */
 .big-heading {
   font-size: 3.5rem;
@@ -41,8 +51,6 @@ h2 {
 
 /* Title */
 #title {
-  color: #FFF;
-  background-color: #FF4C64;
   text-align: left;
 }
 
@@ -63,7 +71,6 @@ h2 {
 
 /* Features */
 #features {
-  background-color: #FFF;
   padding: 7% 15%;
   position: relative;
 }
@@ -93,7 +100,6 @@ h2 {
 /* Testimonials */
 #testimonials {
   background-color: #EF8172;
-  color: #fff;
 }
 
 .carousel-item {
@@ -137,10 +143,6 @@ h2 {
 }
 
 /* Call to action */
-#cta {
-  background-color: #FF4C68;
-}
-
 .h3-cta {
   color: #FFF;
   font-size: 3.0rem;
@@ -151,7 +153,6 @@ h2 {
 
 /* Footer */
 #footer {
-  background-color: #FFF;
   padding: 2%;
 }
 
