@@ -1,0 +1,15 @@
+{
+  "name": "11_calculator_server",
+  "version": "1.0.0",
+  "description": "This is an calculator sample app",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Peretti",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1"
+  }
+}
