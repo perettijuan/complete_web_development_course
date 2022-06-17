@@ -6,6 +6,9 @@ This is a very simple web application in which the user can enter the name of a 
 the web application performs a search to find the movie.
 This web application uses themoviedb API to perform the search.
 
+## Lesson
+Section 20; Chapter 239
+
 ## Learnings
 - How to do HTTP requests to an external API using node's standard library.
 - How to receive the whole data that is coming from this HTTP request.
