@@ -1,4 +1,4 @@
-<h1 align="center"> Movies Website </h1> <br>
+<h1 align="center"> Newsletter Subscription </h1> <br>
 
 ## Description
 
