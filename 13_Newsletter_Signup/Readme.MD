@@ -2,7 +2,7 @@
 
 ## Description
 
-TODO
+This is a very simple web app that allows to subscribe to a newsletter.
 
 ## Lesson
 Section 20; Chapter 247
@@ -14,6 +14,7 @@ Section 20; Chapter 247
 - How to send an HTTP post request using HTTPS.
 - Show success or failure depending on the type of event.
 - Add a Try Again button to redirect the user to the home page.
+- Deply a web app to Heroku.
 
 ## Libraries Or packages used
 - [Node HTTPS](https://nodejs.org/api/https.html): standard node library.

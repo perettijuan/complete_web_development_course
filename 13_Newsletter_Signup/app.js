@@ -74,7 +74,8 @@ app.post("/failure", function(req, res) {
   res.redirect("/");
 });
 
-app.listen(3000, function() {
+// process.env.PORT is the port that Heroku assigns (bcoz process is defined by Heroku)
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server running on port 3000");
 });
 
