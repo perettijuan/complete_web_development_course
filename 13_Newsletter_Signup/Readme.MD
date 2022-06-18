@@ -17,5 +17,6 @@ Section 20; Chapter 247
 - Deply a web app to Heroku.
 
 ## Libraries Or packages used
+- [Express](https://www.npmjs.com/package/express): Express to build Node apps.
 - [Node HTTPS](https://nodejs.org/api/https.html): standard node library.
 - [Body Parser](https://www.npmjs.com/package/body-parser): node package to parse HTTP responses.
