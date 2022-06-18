@@ -22,8 +22,8 @@ app.use(express.static("public"));
 // items and redirects the post to the root. At that point, app.get() is executed again and all the steps in 1 are executed.
 
 // This items array is used to populate the item list in the UI (list.ejs).
-let items = [];
-let workItems = [];
+const items = [];
+const workItems = [];
 // Respond to home with index.html
 app.get("/", function(req, res) {
 
