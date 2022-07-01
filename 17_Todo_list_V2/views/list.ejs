@@ -1,0 +1,31 @@
+<%- include("header.ejs") -%>
+
+  <div class="box" id="heading">
+    <h1>
+      <!-- listTitle is an EJS marker -->
+      <%= listTitle %>
+    </h1>
+  </div>
+
+  <div class="box">
+    <ul>
+      <!-- This line is a scriplet -->
+      <!-- A scriplet is an EJS tag that allows to add control loops in html. -->
+      <% newListItems.forEach(function(item) { %>
+      <div class="item">
+        <input type="checkbox">
+        <p>
+          <%= item.name %>
+        </p>
+      </div>
+      <% })%>
+      <!-- This line is a scriplet -->
+    </ul>
+
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="list" value="<%= listTitle %>">+</button>
+    </form>
+  </div>
+
+<%- include("footer.ejs") -%>
