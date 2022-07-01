@@ -9,3 +9,10 @@ Section 26; Chapter 333
 
 ## Learnings
 - Connect to Mongo DB using Node driver.
+- Connect to Mongo DB using Mongoose.
+- Save single document using Mongoose.
+- Save multiple documents using Mongoose.
+- Use data validation when creating Schemas.
+- Update data using Mongoose.
+- Delete data using Mongoose.
+- Establish Relations between documents.
