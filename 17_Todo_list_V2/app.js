@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const _ = require("lodash");
 
 const app = express();
 // Indicate to express that we want to use ejs as the view engine.
@@ -33,6 +34,14 @@ const item3 = Item({
 });
 const defaultItems = [item1, item2, item3];
 
+// Schema used to store the custom lists.
+const listSchema = {
+  name: String,
+  items: [itemsSchema]
+};
+const List = mongoose.model("list", listSchema);
+
+
 // Respond to home with index.html
 app.get("/", function(req, res) {
   Item.find({}, function(err, dbItems) {
@@ -58,23 +67,90 @@ app.get("/", function(req, res) {
   });
 });
 
+// Using Express Routing Parameters
+app.get("/:customListName", function(req, res) {
+  const customListName = _.capitalize(req.params.customListName);
+
+  // Every time the user types a custom URL path, we create a new TODO list
+  // with the name provided and default items in the DB.
+  // First, we make sure that if the list already exists, we don't create a new one.
+  List.findOne({
+    name: customListName
+  }, function(err, foundList) {
+    if (!err) {
+      if (!foundList) {
+        // If the list doesn't exists, create one.
+        const list = new List({
+          name: customListName,
+          items: defaultItems
+        });
+        list.save();
+        res.redirect("/" + customListName);
+      } else {
+        // If the list exists, render the list ejs with the data found.
+        res.render('list', {
+          listTitle: foundList.name,
+          newListItems: foundList.items
+        });
+      }
+    }
+  });
+});
+
 // Handle the add buttom in the post
 app.post("/", function(req, res) {
   let itemName = req.body.newItem;
+  let listName = req.body.list;
+
   // Store the new item into the DB.
   const newItem = Item({
     name: itemName
   })
-  newItem.save();
-  res.redirect("/");
+
+  if (listName === "Today") {
+    // Save the item into the default collection.
+    newItem.save();
+    res.redirect("/");
+  } else {
+    // Save the item into the existing custom collection.
+    List.findOne({
+      name: listName
+    }, function(err, foundList) {
+      foundList.items.push(newItem);
+      foundList.save();
+      res.redirect("/" + listName);
+    });
+  }
 });
 
-app.get("/work", function(req, res) {
-  // This code asumes that there is a list.ejs file in the views directory.
-  res.render('list', {
-    listTitle: "Work",
-    newListItems: workItems
-  });
+// Handle the delete post (performed when a checkbox is on)
+app.post("/delete", function(req, res) {
+  const checkedItemId = req.body.checkbox;
+  const listName = req.body.listName;
+
+  if (listName === "Today") {
+    // Delete an item from the default list.
+    Item.findByIdAndRemove(checkedItemId, function(err) {
+      if (!err) {
+        res.redirect("/");
+      }
+    });
+  } else {
+    // Delete an item from a custom TODO list:
+    // In order to do this, we need to find the list document and delete an item from the
+    // array that is part of that document.
+    // Finding is simple, the complex part is to delete the item from the array:
+    // to achieve that, we use findOneAndUpdate combined with the $pull operator from MongoDb
+    List.findOneAndUpdate(
+      {name: listName}, // Condition
+      {$pull: {items: {_id: checkedItemId}}}, // Update value using $pull from MongoDB, details in class 348
+      function(err, foundList) {
+        if (!err) {
+          res.redirect("/" + listName);
+        }
+      }
+    )
+  }
 });
 
 app.get("/about", function(req, res) {
