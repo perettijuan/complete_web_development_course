@@ -13,9 +13,8 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Setup Database
-const dbServer = 'mongodb://127.0.0.1:27017';
-const dbName = "todolistDB"
-mongoose.connect(dbServer + "/" + dbName);
+const dbUrl = 'mongodb+srv://bumble-admin:test123@cluster0.oimwnxt.mongodb.net/todolistDB';
+mongoose.connect(dbUrl);
 
 const itemsSchema = {
   name: String
