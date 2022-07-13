@@ -7,6 +7,7 @@ In this case, we store the list data in the database and we provided a delete me
 
 ## Lesson
 Section 28; Chapter 342
+Section 29.
 
 ## Learnings
 - Connecting to a local DB and adding default items.
