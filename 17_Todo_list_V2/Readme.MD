@@ -12,6 +12,7 @@ Section 28; Chapter 342
 - Connecting to a local DB and adding default items.
 - Adding custom lists path by using Routing Parameters.
 - Deleting items from the DB.
+- Connection to Mongo Db Atlas.
 
 ## Libraries Or packages used
 - [Express](https://www.npmjs.com/package/express): Express to build Node apps.
